@@ -1,0 +1,6 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+.card { @apply bg-panel border border-line rounded-lg p-4; }
+.btn { @apply px-3 py-1.5 rounded-md text-sm border border-line hover:border-accent disabled:opacity-50; }
+.btn-primary { @apply bg-accent text-slate-900 font-medium border-accent; }
+.input { @apply bg-bg border border-line rounded-md px-3 py-1.5 text-sm w-full focus:outline-none focus:border-accent; }
+th { @apply text-left text-xs uppercase text-slate-400 font-medium py-2 px-2; } td { @apply py-2 px-2 border-t border-line text-sm; }

@@ -1,0 +1,4 @@
+# API
+Interactive docs at `/docs`. Auth: `Authorization: Bearer <access_token>`.
+`/api/auth/{register,login,refresh,logout,me}` · `/api/ingestion/{upload,events,jobs}` · `/api/events` · `/api/alerts[/{id}]` · `/api/incidents[/{id}]` (+ `/notes`, `/alerts/{alert_id}` POST/DELETE to link/unlink) · `/api/investigations/{id}/analyze` · `/api/assets` · `/api/detection-rules` (+ `/evaluate`) · `/api/response-actions` (+ `/{id}/execute`) · `/api/approvals/{id}` · `/api/reports/incidents/{id}?fmt=pdf|csv|json` · `/api/audit` · `/api/dashboard` · `/api/demo/{load,reset}`.
+Paged lists return `{total, page, page_size, items}`. Agent format: `POST /api/ingestion/events` with `{"events":[{timestamp, action, category, result, username, hostname, source_ip, ...}]}`; unknown fields are preserved as attributes.

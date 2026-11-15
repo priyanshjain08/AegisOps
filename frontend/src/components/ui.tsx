@@ -1,0 +1,10 @@
+import { ReactNode } from "react";
+const SEV: Record<string, string> = { critical: "bg-red-500/20 text-red-300", high: "bg-orange-500/20 text-orange-300", medium: "bg-amber-500/20 text-amber-300", low: "bg-sky-500/20 text-sky-300", informational: "bg-slate-500/20 text-slate-300" };
+export const Sev = ({ v }: { v: string }) => <span className={`px-2 py-0.5 rounded text-xs ${SEV[v] ?? SEV.informational}`}>{v}</span>;
+export const Badge = ({ children }: { children: ReactNode }) => <span className="px-2 py-0.5 rounded text-xs bg-slate-700/50">{children}</span>;
+export const Sim = ({ v }: { v?: boolean }) => v ? <span className="ml-1 text-[10px] px-1 rounded border border-amber-500/50 text-amber-300">SIMULATED</span> : null;
+export const Loading = () => <div className="animate-pulse space-y-2">{[0, 1, 2].map(i => <div key={i} className="h-8 bg-line rounded" />)}</div>;
+export const ErrorBox = ({ error }: { error: unknown }) => <div role="alert" className="card border-red-500/40 text-red-300">{(error as Error)?.message ?? "Something went wrong"}</div>;
+export const Empty = ({ text }: { text: string }) => <div className="card text-slate-400 text-sm text-center py-8">{text}</div>;
+export const Table = ({ head, children }: { head: string[]; children: ReactNode }) => <div className="card overflow-x-auto p-0"><table className="w-full"><thead><tr>{head.map(h => <th key={h}>{h}</th>)}</tr></thead><tbody>{children}</tbody></table></div>;
+export const fmt = (s?: string) => s ? new Date(s).toLocaleString() : "-";
